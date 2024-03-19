@@ -8,8 +8,6 @@ import com.mikuac.shiro.core.Bot
 import com.mikuac.shiro.dto.event.message.AnyMessageEvent
 import io.github.oshai.kotlinlogging.KotlinLogging
 import me.kht.ayanamibot.GroupFeatures
-import okhttp3.OkHttpClient
-import okhttp3.Request
 import org.springframework.stereotype.Component
 import kotlin.io.path.Path
 
@@ -26,7 +24,7 @@ private const val USAGE = """
 """
 
 @Component
-class RustDocsPlugin(groupFeatures: GroupFeatures, private val httpClient: OkHttpClient,private val browser: Browser): BasePlugin(groupFeatures, USAGE, DESC,"RustDocs") {
+class RustDocsPlugin(groupFeatures: GroupFeatures, private val browser: Browser): BasePlugin(groupFeatures, USAGE, DESC,"RustDocs") {
 
     private val commandRegex = Regex("""\$\| ([^!@%]+)([!@%*])(#([A-Za-z\-_]+))?""")
 
@@ -40,7 +38,6 @@ class RustDocsPlugin(groupFeatures: GroupFeatures, private val httpClient: OkHtt
 
         val message = event.rawMessage
 
-        val m = commandRegex.matches(message)
         val matchEntries = commandRegex.matchEntire(message)
 
         matchEntries ?: return MESSAGE_IGNORE

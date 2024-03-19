@@ -3,7 +3,6 @@ package me.kht.ayanamibot
 import com.microsoft.playwright.Browser
 import com.microsoft.playwright.Playwright
 import com.squareup.moshi.Moshi
-import com.squareup.moshi.addAdapter
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import me.kht.ayanamibot.model.adapter.DescV2Adapter
 import okhttp3.OkHttpClient
