@@ -1,0 +1,10 @@
+server:
+  port: 3000
+shiro:
+  plugin-list:
+    - me.kht.ayanamibot.plugin.WiktionaryPlugin
+    - me.kht.ayanamibot.plugin.MetaPlugin
+    - me.kht.ayanamibot.plugin.EchoPlugin
+    - me.kht.ayanamibot.plugin.HelpPlugin
+    - me.kht.ayanamibot.plugin.RustDocsPlugin
+    - me.kht.ayanamibot.plugin.BilibiliPlugin
